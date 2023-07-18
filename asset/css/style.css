@@ -1,6 +1,6 @@
 body {
-  background-image: url("./../../img/bg.png");
-  height: 1000px;
+  background-image: url("./../../../asset/img/bg.png");
+  background-color: rgba(0, 0, 0, 0.089);
   background-size: cover;
 }
 
@@ -14,13 +14,11 @@ header {
 .container a {
   text-decoration: none;
 }
-
-h1 {
+.container h1 {
   color: rgb(204, 204, 204);
   font-family: "Times New Roman", Times, serif;
 }
-
-.homeEffect {
+.container .homeEffect {
   /* opacity: 95%; */
   display: flex;
   align-items: center;
@@ -37,17 +35,14 @@ h1 {
   letter-spacing: 2px;
   transition: 1s box-shadow;
 }
-
-.pic:hover h1 {
+.container .pic:hover h1 {
   color: #f3ce5e;
 }
-
-.pic:hover .homeEffect {
+.container .pic:hover .homeEffect {
   box-shadow: 0 5px 35px 0px rgba(0, 0, 0, 0.1);
 }
-
-.pic:hover .homeEffect:before,
-.pic:hover .homeEffect:after {
+.container .pic:hover .homeEffect:before,
+.container .pic:hover .homeEffect:after {
   display: block;
   content: "";
   position: absolute;
@@ -58,19 +53,16 @@ h1 {
   z-index: -1;
   animation: 1s clockwise infinite;
 }
-
-.pic:hover .homeEffect:after {
+.container .pic:hover .homeEffect:after {
   background: #f3ce5e;
   animation: 2s counterclockwise infinite;
 }
-
-.underline-hover-effect {
+.container .underline-hover-effect {
   display: inline-block;
   padding-bottom: 0.25rem; /* defines the space between text and underline */
   position: relative;
 }
-
-.underline-hover-effect:before {
+.container .underline-hover-effect:before {
   content: "";
   position: absolute;
   left: 0;
@@ -80,11 +72,9 @@ h1 {
   background-color: #f3ce5e;
   transition: width 0.25s ease-out;
 }
-
-.pic:hover .underline-hover-effect:before {
+.container .pic:hover .underline-hover-effect:before {
   width: 100%;
 }
-
 @keyframes clockwise {
   0% {
     top: -5px;

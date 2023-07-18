@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Admin</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- link font awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="./view/css/style.css">
+</head>
+  <body>
+    
+    <header>
+        <nav class="container navbar navbar-expand-md  navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">Cyber Phone</a>
+          
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item text-center mx-5">
+                    <a class="nav-link active" href="../index.html" role="button" aria-haspopup="true" aria-expanded="false">
+                      <div>
+                        <i class="fas fa-home fa-xl mb-1"></i>
+                      </div>
+                      Home
+                    </a>
+                  </li>
+                  <li class="nav-item text-center">
+                    <a class="nav-link active" href=".././customer/customer.html" role="button" aria-haspopup="true" aria-expanded="false">
+                    <div>
+                      <i class="fa-solid fa-xl fa-store"></i>
+                    </div>
+                    Store
+                  </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </nav>
+          
+    </header>
+    <div class="container py-5" id="content-wrap">
+        <main role="main" class="mt-5">
+          <div class="d-flex justify-content-between mb-2 py-3 px-2 phoneBanner">
+            <h3 class="text-light">Phone Management</h3>
+            <div class="text-right">
+              <button type="button" class="btn btn-banner" data-bs-toggle="modal" data-bs-target="#exampleModal" id="addPhoneForm">
+                <i class="fa-solid fa-circle-plus me-2"></i> Add Phone
+              </button>
+            </div>
+          </div>
+         
+          <div class=" table-responsive">
+          <table class="table display" id="myTable">
+            <thead class="">
+              <tr> 
+                <th>#</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Photo</th>
+                <th>Discription</th>
+                <th><em class="fa fa-cog"></em> Action</th>
+              </tr>
+            </thead>
+            <tbody id="tablePhone"></tbody>
+          </table>
+        </div>
+    
+          <div class="modal fade" id="exampleModal" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <header class="head-form mb-0">
+                  <h3 id="header-title">Phone Management</h3>
+                </header>
+      
+                <!-- Modal Header -->
+                <!-- 	<div class="modal-header">
+                <h4 class="modal-title" id="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div> -->
+      
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <form role="form" id="formPhone">
+                  
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                        </div>
+                        <input type="text" name="name" id="name" class="form-control input-sm" placeholder="Phone name">
+                      </div>
+                      <span class="sp-thongbao" id="tbname">‍</span>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fa-regular fa-dollar-sign"></i></span>
+                        </div>
+                        <input type="text" name="name" id="price" class="form-control input-sm" placeholder="Price">
+                      </div>
+                      <span class="sp-thongbao" id="tbprice">‍</span>
+                    </div>
+      
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fa-solid fa-mobile-screen"></i></span>
+                        </div>
+                        <input type="text" name="email" id="screen" class="form-control input-sm" placeholder="Screen">
+                      </div>
+      
+                      <span class="sp-thongbao" id="tbscreen">‍</span>
+                    </div>
+      
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fa-solid fa-camera"></i></span>
+                        </div>
+                        <input type="text" name="name" id="backCam" class="form-control" placeholder="Back Camera">
+                      </div>
+      
+                      <span class="sp-thongbao" id="tbbackCam">‍</span>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fa-solid fa-camera"></i></span>
+                        </div>
+                        <input type="text" name="name" id="frontCam" class="form-control" placeholder="Front Camera">
+                      </div>
+      
+                      <span class="sp-thongbao" id="tbfrontCam">‍</span>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fa-solid fa-link"></i></span>
+                        </div>
+                        <input type="text" name="name" id="img" class="form-control" placeholder="Image link">
+                      </div>
+      
+                      <span class="sp-thongbao" id="tbimg">‍</span>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fa-solid fa-comment"></i></span>
+                        </div>
+                        <input type="text" name="name" id="desc" class="form-control" placeholder="Description">
+                      </div>
+      
+                      <span class="sp-thongbao" id="tbdesc">‍</span>
+                    </div>
+      
+                 
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
+                        </div>
+                        <select class="form-control" name="chucvu" id="type">
+                          <option selected="" disabled="">Select brand</option>
+                          <option>Apple</option>
+                          <option>Samsung</option>
+                        </select>
+                      </div>
+      
+                      <span class="sp-thongbao" id="tbtype">‍</span>
+                    </div>
+                
+                  </form>
+                </div>
+      
+                <!-- Modal footer -->
+                <div class="modal-footer" id="modal-footer">
+                  <button type="button" class="btn" id="btnAddPhone" style="display: inline-block;">
+                    Add Phone
+                  </button>
+                  <button id="btnUpdate" type="button" class="btn" style="display: none;">
+                    Update Phone
+                  </button>
+                  <button id="btnClose" type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+    
+        
+    
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
