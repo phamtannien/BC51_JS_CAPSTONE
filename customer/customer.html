@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Trang Bán Hàng</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+    <link rel="stylesheet" href="./test css/test.css">
+</head>
+
+<body>
+    <header>
+        <div class="container header">
+            <div class="header-left">
+                <h1 class="header-title">BÀI TẬP CAPSTONE</h1>
+            </div>
+            <div class="header-nav">
+                <ul>
+                    <li>
+                        <a href="#">TRANG CHỦ</a>
+                    </li>
+                    <li>
+                        <a href="#"> GIỚI THIỆU</a>
+                    </li>
+                    <li>
+                        <a class="hover-product" href="#">
+                            <span>SẢN PHẨM</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#">LIÊN HỆ</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <section>
+        <div class="select">
+            <div class="select-text">
+                <form class="select-text-left">
+                    <input id="searchProduct" type="text" placeholder="Bạn cần gì">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </form>
+                <div class="select-text-right">
+                    <div id="gioHang" class="gioHang">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p>Giỏ Hàng</p>
+                    </div>
+                    <div class="select-select">
+                        <select id="select" onchange="selectTypeProduct()">
+                            <option value="">Loại sản phẩm</option>
+                            <option>Samsung</option>
+                            <option>Iphone</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="container">
+        <div class="content">
+            <div class="row" id="hienThiSanPham">
+
+
+
+            </div>
+
+
+            <!-- <div class="content-item">
+                <div class="content-top">
+                    <h4>IphoneX</h4>
+                    <img class="img" src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-hh-600x600.jpg" alt="">
+                </div>
+                <div class="content-bottom">
+                    <p class="p-left">Type: iphone</p>
+                    <p class="p-right">giá: 1000</p>
+                    <p>BackCamera: 2 camera 12 MP</p>
+                    <p>FrontCamera: 7 MP</p>
+                    <p>Desc: Thiết kế mang tính đột phá</p>
+                </div>
+            </div> -->
+        </div>
+        <div>
+            <div class="gioHang-top">
+                <div class="gioHang-title">
+                    <h2>GIỎI HÀNG</h2>
+                </div>
+                <div class="gioHang-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Hình ảnh</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Tùy chỉnh </th>
+                            </tr>
+                        </thead>
+                        <tbody id="hienThiGioHang">
+                            <!-- <tr>
+                                <td scope="row">
+                                    <img class="gioHang-img"
+                                        src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-hh-600x600.jpg"
+                                        alt="">
+                                </td>
+                                <td>Iphone</td>
+                                <td>1000</td>
+                                <td>
+                                   <input type="number" id="soLuong">
+                                    <button onclick="tangSoLuong()">tăng</button>
+                                    <button onclick="giamSoLuong()">giảm</button>
+                                </td>
+                            </tr> -->
+                           
+                        </tbody>
+                        
+                       
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+        integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+    <script src="./services/api.js"></script>
+
+    <script src="./model/cart.js"></script>
+
+    <script src="./controller/main.js"></script>
+
+</body>
+
+</html>
