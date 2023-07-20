@@ -65,7 +65,7 @@
         <div class ='d-flex justify-content-between mb-2 py-3 px-2 phoneBanner'>
           <h3 class="text-light">Phone Management</h3>
           <div class="text-right">
-            <button type="button" class="btn btn-banner" data-toggle="modal" data-target="#exampleModal" >
+            <button id="btnThemSP" type="button" class="btn btn-banner" data-toggle="modal" data-target="#exampleModal" >
               <i class="fa-solid fa-circle-plus me-2"></i> Add Phone
             </button>
           </div>
@@ -137,36 +137,22 @@
                     </div>
                     <span class="sp-thongbao" id="tbprice"></span>
                   </div>
-    
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa-solid fa-mobile-screen"></i></span>
                       </div>
-                      <input
-                        type="text"
-                        name="email"
-                        id="screen"
-                        class="form-control input-sm"
-                        placeholder="Screen"
-                      />
+                      <input type="text" name="email" id="screen" class="form-control input-sm" placeholder="Screen">
                     </div>
     
                     <span class="sp-thongbao" id="tbscreen"></span>
                   </div>
-    
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa-solid fa-camera"></i></span>
                       </div>
-                      <input
-                        type="text"
-                        name="name"
-                        id="backCam"
-                        class="form-control"
-                        placeholder="Back Camera"
-                      />
+                      <input type="text" name="name" id="backCam" class="form-control" placeholder="Back Camera">
                     </div>
     
                     <span class="sp-thongbao" id="tbbackCam"></span>
@@ -174,15 +160,9 @@
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fa-solid fa-camera"></i></i></span>
+                        <span class="input-group-text"><i class="fa-solid fa-camera"></i></span>
                       </div>
-                      <input
-                        type="text"
-                        name="name"
-                        id="frontCam"
-                        class="form-control"
-                        placeholder="Front Camera"
-                      />
+                      <input type="text" name="name" id="frontCam" class="form-control" placeholder="Front Camera">
                     </div>
     
                     <span class="sp-thongbao" id="tbfrontCam"></span>
@@ -219,15 +199,13 @@
     
                     <span class="sp-thongbao" id="tbdesc"></span>
                   </div>
-    
-               
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
                       </div>
                       <select class="form-control" name="chucvu" id="type">
-                        <option selected disabled>Select brand</option>
+                        <option selected="" disabled="">Select brand</option>
                         <option>Apple</option>
                         <option>Samsung</option>
                       </select>
@@ -235,6 +213,7 @@
     
                     <span class="sp-thongbao" id="tbtype"></span>
                   </div>
+               
               
                 </form>
               </div>
@@ -251,7 +230,7 @@
                   id="btnClose"
                   type="button"
                   class="btn btn-danger"
-                  data-bs-dismiss="modal"
+                  data-dismiss="modal"
                 >
                   Close
                 </button>
@@ -265,6 +244,13 @@
   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  
-  </body>
+
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+    integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./model/product.js"></script>
+<script src="./services/api.js"></script>
+<script src="./controller/main.js"></script>
+</body>
 </html>
