@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 10px;
+    background-color: aqua;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-nav ul {
+    list-style: none;
+}
+
+.header-nav ul li {
+    display: inline;
+    margin: 20px;
+
+}
+
+.header-nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.select {
+    padding: 30px;
+}
+
+.select-text {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.gioHang {
+    padding: 10px 15px;
+    background-color: chocolate;
+}
+
+.gioHang p {
+    display: inline;
+}
+
+.content-item {
+    margin: 10px;
+    padding: 20px;
+    width: 30%;
+    position: relative;
+    padding-bottom: 20px;
+    background-color: cadetblue;
+    border-radius: 20px;
+}
+
+.content-top h4 {
+    text-align: center;
+}
+
+.content-top img {
+    width: 100%;
+}
+
+.content-bottom .p-left {
+    text-align: left;
+    position: absolute;
+}
+
+.content-bottom .p-right {
+    text-align: right;
+}
+
+.content-bottom {
+    padding: 20px 10px;
+}
+
+.content-bottom p {
+    font-size: 20px;
+}
+.gioHang-title {
+    border: 1px solid black;
+}
+.gioHang-title h2 {
+    text-align: center;
+}
+
+.gioHang-img {
+    width: 50px;
+}
