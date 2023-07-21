@@ -1,8 +1,8 @@
 var api = new Service();
 
 var cart = new Cart();
-// var validation = new Validation();
 
+var product = new Product();
 getLocalStorage();
 function getListProduct() {
     var promise = api.getListProductApi();
@@ -83,7 +83,7 @@ function thongTinGioHang(id, isVali) {
     var price = product.price;
     var img = product.img;
     var soLuong = 1;
-
+    var money=0;
 
     if (isVali) {
         var flag = false;
@@ -102,6 +102,7 @@ function thongTinGioHang(id, isVali) {
                 price: price,
                 img: img,
                 soLuong: soLuong,
+                money:soLuong*price,
             }
             cart.themSP(cartItem);
         }
@@ -135,8 +136,8 @@ function getLocalStorage() {
 
 function renderCart() {
     var content = '';
-    for(var i=0;i<cart.arr.length;i++){
-        var cartItem=cart.arr[i];
+    for (var i = 0; i < cart.arr.length; i++) {
+        var cartItem = cart.arr[i];
         content += `
                 <tr>
                     <td scope="row"><img class="gioHang-img"
@@ -145,22 +146,79 @@ function renderCart() {
                     <td>${cartItem.name}</td>
                     <td>${cartItem.price}</td>
                     <td>
-                    <button onclick="giam">-</button>
+                    <button onclick="giam(${cartItem.id})">-</button>
                     <span>${cartItem.soLuong}</span>
-                    <button onclick="tang">+</button></td>
+                    <button onclick="tang(${cartItem.id})">+</button></td>
                     <td>
-                        <button onclick="thanhToan()">Thanh toan</button>
-                        <button onclick="xoaSanPham()">Xóa</button>
+                        
+                        <button onclick="xoaSanPham(${cartItem.id})">Xóa</button>
                     </td>
-                </tr>      
+                    <td>${cartItem.money}$</td>
+                </tr>            
     `
-
     }
-    
-
     document.getElementById("hienThiGioHang").innerHTML = content;
+}
+function giam(id) {
+    for (var i = 0; i < cart.arr.length; i++) {
+        var cartItem = cart.arr[i];
+        if (cartItem.id == id) {
+            break;
+        }
+    }
+    var soLuong = cartItem.soLuong - 1;
+    cartItem.soLuong = soLuong;
+    if (cartItem.soLuong === 0) {
+        cart.xoaSanPham(id);
+    }
+    cartItem.soLuong = soLuong;
+    cartItem.money = money(cartItem.soLuong,cartItem.price);
+    renderCart(cart.arr);
+    setLocalStorage();
+}
+function tang(id) {
+    for (var i = 0; i < cart.arr.length; i++) {
+        var cartItem = cart.arr[i];
+        if (cartItem.id == id) {
+            break;
+        }
+    }
+    var soLuong = cartItem.soLuong + 1;
+    cartItem.soLuong = soLuong;
+    cartItem.money = money(cartItem.soLuong,cartItem.price);
+    renderCart(cart.arr);
+    setLocalStorage();
+}
+function money(soLuong,price){
+    var money=soLuong*price;
+    return money;
 }
 
 function thanhToan() {
-    console.log(123);
+    var total = 0;
+    for (var i = 0; i < cart.arr.length; i++) {
+        var cartItem = cart.arr[i];
+        total += cartItem.price * cartItem.soLuong;
+
+    }
+    console.log(total);
+    var input="Số tiền quý khách cần thanh toán là: "+ total +"$";
+    getEle("hienThiThanhToan").innerHTML=input;
+    cart.arr=[];
+    console.log(cart.arr);
+    renderCart(cart.arr);
+    setLocalStorage();
+}
+
+
+function xoaSanPham(id) {
+    cart.xoaSanPham(id);
+    renderCart(cart.arr);
+    setLocalStorage();
+}
+
+function renderThanhToan() {
+    
+
+
 }
