@@ -21,4 +21,19 @@ function Service(){
         });
         return promise;
      };
+     this.getListProductById = function(id){
+        var promise = axios({
+            url:` https://64b78f6821b9aa6eb0785fd7.mockapi.io/product/${id}` ,
+            method: "GET",
+        });
+        return promise
+     }
+     this.updateProductApi = function(product){
+        var promise = axios({
+            url: ` https://64b78f6821b9aa6eb0785fd7.mockapi.io/product/${product.id}` ,
+            method: "PUT",
+            data: product,
+        });
+        return promise;
+     }
 }
