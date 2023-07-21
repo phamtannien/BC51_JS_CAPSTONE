@@ -98,14 +98,15 @@
                     <h2>GIỎI HÀNG</h2>
                 </div>
                 <div class="gioHang-body">
-                    <table class="table">
+                    <table class="table" >
                         <thead>
                             <tr>
                                 <th>Hình ảnh</th>
                                 <th>Tên sản phẩm</th>
-                                <th>Giá</th>
+                                <th>Giá Sản Phẩm</th>
                                 <th>Số lượng</th>
                                 <th>Tùy chỉnh </th>
+                                <th>Thành tiền</th>
                             </tr>
                         </thead>
                         <tbody id="hienThiGioHang">
@@ -123,12 +124,23 @@
                                     <button onclick="giamSoLuong()">giảm</button>
                                 </td>
                             </tr> -->
-                           
+
+
                         </tbody>
-                        
-                       
+                        <tfoot class="tfooter">
+                            <tr>
+                                <td> <button onclick="thanhToan()">Thanh toan</button> </td>
+                                <td id="hienThiThanhToan"></td>
+                            </tr>
+                            
+
+                        </tfoot>
+
+
                     </table>
+                    
                 </div>
+                
             </div>
         </div>
     </section>
@@ -162,6 +174,8 @@
 
 
     <script src="./services/api.js"></script>
+
+    <script src="./model/product.js"></script>
 
     <script src="./model/cart.js"></script>
 
