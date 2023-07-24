@@ -10,8 +10,9 @@ function getListProduct() {
     promise.then(function (result) {
         dssp = result.data;
         var dataJson = JSON.parse(JSON.stringify(dssp));
+        
         dssp.arr = dataJson;
-
+        
         renderProduct(dssp.arr);
     })
         .catch(function (error) {

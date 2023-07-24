@@ -84,10 +84,15 @@
 
         <div class ='d-flex justify-content-between mb-2 py-3 px-2 phoneBanner'>
           <h3 class="text-light">Phone Management</h3>
-          <div class="text-right">
-            <button id="btnThemSP" type="button" class="btn btn-banner" data-toggle="modal" data-target="#exampleModal" >
+          <div class="text-right" onclick="resetForm()">
+            <button id="btnThemSP"  type="button" class="btn btn-banner" data-toggle="modal" data-target="#exampleModal" >
               <i class="fa-solid fa-circle-plus me-2"></i> Add Phone
             </button>
+          </div>
+          <div class="form-group">
+           
+            <input type="text" id="txtSearch" class="form-control" placeholder="Tìm kiếm sản phẩm" >
+            
           </div>
         </div>
        
@@ -259,6 +264,7 @@
     integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./model/product.js"></script>
+<script src="./model/listproduct.js"></script>
 <script src="./services/api.js"></script>
 <script src="./controller/main.js"></script>
 </body>
