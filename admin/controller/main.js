@@ -1,5 +1,5 @@
 var api = new Service();
-
+var listproduct = new ListProduct();
 
 function getEle(id){
     return document.getElementById(id);
@@ -12,6 +12,8 @@ function getListProduct(){
   promise
   .then(function(result){
     renderUI(result.data)
+    listproduct.addProduct(result.data)
+   console.log( listproduct.orderByPrice("DESC"));
     getEle("loader").style.display="none";
   })
   .catch(function(error){
@@ -31,7 +33,7 @@ function renderUI(data){
                 <td>${product.name}</td>
                 <td>${product.price}</td>
                 <td>
-                    <img src="${product.img}" width="20%" />                
+                    <img src="${product.img}" width="30%" />                
                 </td>
                 <td>${product.desc}</td>
                 
@@ -44,6 +46,18 @@ function renderUI(data){
     }
     getEle("tablePhone").innerHTML = content;
 }
+ /**
+  * tìm kiếm
+  */
+
+ function searchProduct(){
+  var txtSearch = getEle("txtSearch").value;
+  var arraySearch = listproduct.findProduct(txtSearch);
+
+  renderUI(arraySearch);
+  
+ }
+ getEle("txtSearch").addEventListener("keyup", searchProduct)
 
 /**
  * xóa
@@ -68,8 +82,13 @@ getEle("btnThemSP").onclick = function(){
     getEle("modal-footer").innerHTML = buttonAdd;
 }
 
+function resetForm() {
+  document.getElementById('formPhone').reset()   
+}
+
  function addPhone(){
-    // dom tới các thẻ input
+    // dom tới các thẻ inpu
+   
 var name = getEle("name").value
 var price = getEle("price").value
 var img = getEle("img").value
@@ -81,7 +100,7 @@ var type = getEle("type").value
 
 
     //tạo đối tượng product từ lớp đối tượng Product
-    var product = new Product("", name, price, img, desc, screen, backCam, frontCam, type )
+  var product = new Product("", name, price, img, desc, screen, backCam, frontCam, type )
    
    var promise = api.addProductApi(product)
         promise
@@ -89,12 +108,17 @@ var type = getEle("type").value
           getListProduct();
           //close modal
           document.getElementsByClassName("close")[0].click();
+          if(product){
+            listproduct.addProduct(product)
+          }
             
           })
           .catch(function(error){
             console.log(error);
           })
 }
+
+
 /**
  * sửa
  */
@@ -146,5 +170,5 @@ api.updateProductApi(product)
   document.getElementsByClassName("close")[0].click();
 })
 .catch();
-  
+ 
  }
