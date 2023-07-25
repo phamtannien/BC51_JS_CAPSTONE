@@ -18,7 +18,7 @@ function getListProduct() {
         dssp.arr = dataJson;
 
         getEle("loader").style.display = "none";
-        renderProduct(dssp.arr);
+        renderSanPham(dssp.arr);
     })
         .catch(function (error) {
             getEle("loader").style.display = "none";
@@ -27,7 +27,7 @@ function getListProduct() {
 }
 getListProduct();
 
-function renderProduct(data) {
+function renderSanPham(data) {
     var content = "";
     for (var i = 0; i < data.length; i++) {
         var product = data[i];
@@ -72,7 +72,7 @@ function selectTypeProduct() {
             selectType = dssp;
         }
     }
-    renderProduct(selectType);
+    renderSanPham(selectType);
 }
 function searchProducts() {
     var timKiemSanPham = getEle("searchProduct").value;
@@ -91,7 +91,7 @@ function searchProducts() {
 
     }
     console.log(mangTimKiem);
-    renderProduct(mangTimKiem);
+    renderSanPham(mangTimKiem);
 }
 getEle("searchProduct").addEventListener("keyup", searchProducts);
 
