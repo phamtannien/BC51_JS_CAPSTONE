@@ -1,0 +1,31 @@
+.head {
+    background-color: $color-blue-1;
+
+    .navbar-brand {
+        @include style-header($fs-3, $fw-2, $color-yellow-1)
+    }
+
+    .nav-link {
+        @include style-text($fs-2, $color-white-2)
+    }
+}
+
+.menu-nav {
+    background-color: $color-blue-1;
+
+    .navbar-nav {
+        .nav-item {
+            background-color: $color-blue-3;
+            border: 1px solid gray;
+            width: 200px;
+        }
+
+        .nav-link {
+            @include style-text($fs-2, $color-blue-1)
+        }
+
+    }
+}
+.shopcart {
+    margin-bottom: 0 !important;
+}

@@ -1,0 +1,35 @@
+.content {
+    .product-title {
+        display: block;
+        text-align: center;
+        @include style-header($fs-2, $fw-2, $color-black-0)
+    }
+
+}
+
+.item {
+    margin: 10px 0;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: $color-white-4;
+    @include style-text($fs-2, $color-dark-2);
+
+    .card-head {
+        text-align: center;
+    }
+
+    .card-body {
+        height: 350px;
+    }
+
+}
+
+.buyItem {
+    position: relative;
+    top: auto;
+    color: $color-dark-4;
+    padding: 5px 10px;
+    background-color: $color-blue-4;
+}

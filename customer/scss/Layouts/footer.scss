@@ -1,0 +1,40 @@
+.footer {
+    background-color: $color-blue-1;
+
+    .contact {
+        display: flex;
+        @include style-text($fs-2, $color-white-4);
+
+        .contact-item h3 {
+            color: $color-yellow-1;
+        }
+
+        .contact-item ul li {
+            list-style: none;
+        }
+
+        .contact-item ul li a {
+            text-decoration: none;
+            @include style-text($fs-2, $color-white-4);
+        }
+
+        .contact-item .icon {
+            display: flex;
+        }
+
+        .contact-input {
+            margin: 10px;
+        }
+
+        .icon li a {
+            display: block !important;
+            width: 30px;
+            height: 30px;
+            background-color: $color-yellow-1;
+            border-radius: 50%;
+            text-align: center;
+            margin-right: 10px;
+            color: $color-white-1;
+        }
+    }
+}

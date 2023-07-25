@@ -1,0 +1,9 @@
+@mixin style-header($fs, $fw , $color){
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color !important;
+}
+@mixin style-text($fs, $color){
+    font-size: $fs;
+    color: $color !important;
+}

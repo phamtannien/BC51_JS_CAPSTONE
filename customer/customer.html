@@ -13,137 +13,167 @@
 
 
 
-    <link rel="stylesheet" href="./test css/test.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <header>
-        <div class="container header">
+    <header class="head">
+        <nav class="container navbar navbar-expand-sm">
             <div class="header-left">
-                <h1 class="header-title">BÀI TẬP CAPSTONE</h1>
+                <a class="navbar-brand" href="#">Cyber Phone</a>
             </div>
-            <div class="header-nav">
-                <ul>
-                    <li>
-                        <a href="#">TRANG CHỦ</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
                     </li>
-                    <li>
-                        <a href="#"> GIỚI THIỆU</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../admin/ad.html"> Admin</a>
                     </li>
-                    <li>
-                        <a class="hover-product" href="#">
-                            <span>SẢN PHẨM</span>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </a>
-
-                    </li>
-                    <li>
-                        <a href="#">LIÊN HỆ</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ct">Contact</a>
                     </li>
                 </ul>
             </div>
 
-        </div>
+        </nav>
     </header>
-    <section>
-        <div class="select">
-            <div class="select-text">
-                <form class="select-text-left">
-                    <input id="searchProduct" type="text" placeholder="Bạn cần gì">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+    <section class="menu-nav">
+        <div class="container">
+            <nav class="navbar navbar-expand-sm justify-content-center">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Laptop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SmartWatch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Smartphone</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="navbar">
+                <p class="select" style="color: white;">Type:
+                    <select id="select" onchange="selectTypeProduct()">
+                        <option value="">All</option>
+                        <option>Samsung</option>
+                        <option>Iphone</option>
+                    </select>
+                </p>
+                <form class="form-inline" action="/action_page.php">
+                    <input class="form-control mr-sm-2" id="searchProduct" type="text" placeholder="Search Phone">
+                    <button class="btn btn-success" type="submit">Search</button>
                 </form>
-                <div class="select-text-right">
-                    <div id="gioHang" class="gioHang">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <p>Giỏ Hàng</p>
-                    </div>
-                    <div class="select-select">
-                        <select id="select" onchange="selectTypeProduct()">
-                            <option value="">Loại sản phẩm</option>
-                            <option>Samsung</option>
-                            <option>Iphone</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+                <button id="btnGioHang" data-toggle="modal" data-target="#myModal" class="btn btn-info">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p class="shopcart">Cartmaket</p>
+                </button>
+
+            </nav>
         </div>
+
+
 
     </section>
     <section class="container">
         <div class="content">
+            <div style="display: none;" id="loader" class="loader"></div>
+            <div class="product-title">
+                <h1>Product</h1>
+            </div>
             <div class="row" id="hienThiSanPham">
 
-
-
-            </div>
-
-
-            <!-- <div class="content-item">
-                <div class="content-top">
-                    <h4>IphoneX</h4>
-                    <img class="img" src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-hh-600x600.jpg" alt="">
-                </div>
-                <div class="content-bottom">
-                    <p class="p-left">Type: iphone</p>
-                    <p class="p-right">giá: 1000</p>
-                    <p>BackCamera: 2 camera 12 MP</p>
-                    <p>FrontCamera: 7 MP</p>
-                    <p>Desc: Thiết kế mang tính đột phá</p>
-                </div>
-            </div> -->
-        </div>
-        <div>
-            <div class="gioHang-top">
-                <div class="gioHang-title">
-                    <h2>GIỎI HÀNG</h2>
-                </div>
-                <div class="gioHang-body">
-                    <table class="table" >
-                        <thead>
-                            <tr>
-                                <th>Hình ảnh</th>
-                                <th>Tên sản phẩm</th>
-                                <th>Giá Sản Phẩm</th>
-                                <th>Số lượng</th>
-                                <th>Tùy chỉnh </th>
-                                <th>Thành tiền</th>
-                            </tr>
-                        </thead>
-                        <tbody id="hienThiGioHang">
-                            <!-- <tr>
-                                <td scope="row">
-                                    <img class="gioHang-img"
-                                        src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-hh-600x600.jpg"
-                                        alt="">
-                                </td>
-                                <td>Iphone</td>
-                                <td>1000</td>
-                                <td>
-                                   <input type="number" id="soLuong">
-                                    <button onclick="tangSoLuong()">tăng</button>
-                                    <button onclick="giamSoLuong()">giảm</button>
-                                </td>
-                            </tr> -->
-
-
-                        </tbody>
-                        <tfoot class="tfooter">
-                            <tr>
-                                <td> <button onclick="thanhToan()">Thanh toan</button> </td>
-                                <td id="hienThiThanhToan"></td>
-                            </tr>
-                            
-
-                        </tfoot>
-
-
-                    </table>
-                    
-                </div>
-                
             </div>
         </div>
+
     </section>
+
+    <div id="myModal" class="modal fade" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="gioHang" class="gioHang">
+                    <div class="gioHang-title" style="text-align: center;">
+                        <h2>GIỎI HÀNG</h2>
+                    </div>
+                    <div class="gioHang-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Hình ảnh</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Giá Sản Phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Tùy chỉnh </th>
+                                    <th>Thành tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody id="hienThiGioHang" class="input-cart">
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tablefooder" id="hienThiThanhToan">
+                </div>
+
+                <tr><button style="display: none;" id="hienthi" onclick="thanhToan()">Thanh toán</button></tr>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div id="ct" class="contact">
+                <div class="contact-item col-lg-6">
+                    <h3>Cyber Phone</h3>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+0123456789">0123456789</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:cyberphone@gmail.com">cyberphone@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <a href="https://www.google.com/maps?authuser=0">020 cy street, Ho Chi Minh city</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contact-item  col-lg-6">
+                    <h3>Our Link</h3>
+                    <ul>
+                        <li>
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="../admin/ad.html">Admin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"> <i class="fa-solid fa-arrow-up"></i></button>
+
+
+
 
 
 
@@ -171,15 +201,17 @@
         integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script src="./library/back-to-top/util.js"></script>
+    <script src="./library/back-to-top/main.js"></script>
 
+    <script src="./src/services/api.js"></script>
 
-    <script src="./services/api.js"></script>
+    <script src="./src/model/product.js"></script>
 
-    <script src="./model/product.js"></script>
+    <script src="./src/model/cart.js"></script>
 
-    <script src="./model/cart.js"></script>
-
-    <script src="./controller/main.js"></script>
+    <script src="./src/controller/backtotop.js"></script>
+    <script src="./src/controller/main.js"></script>
 
 </body>
 
