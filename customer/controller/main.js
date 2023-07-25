@@ -13,8 +13,10 @@ function getListProduct() {
 
     promise.then(function (result) {
         dssp = result.data;
+
         var dataJson = JSON.parse(JSON.stringify(dssp));
         dssp.arr = dataJson;
+
         getEle("loader").style.display = "none";
         renderProduct(dssp.arr);
     })
