@@ -81,7 +81,11 @@
     <div class="container py-5" id="content-wrap">
       <main role="main" class="mt-5">
         <div id="loader" style="display: none;" class="loader"></div>
-
+        <select class="custom-select" id="slcArrange">
+          <option selected="">Sắp xếp theo giá tiền</option>
+         <option value="DESC">Cao => Thấp</option>
+          <option value="ASC">Thấp => Cao</option>             
+        </select>
         <div class ='d-flex justify-content-between mb-2 py-3 px-2 phoneBanner'>
           <h3 class="text-light">Phone Management</h3>
           <div class="text-right" onclick="resetForm()">
@@ -89,6 +93,7 @@
               <i class="fa-solid fa-circle-plus me-2"></i> Add Phone
             </button>
           </div>
+          
           <div class="form-group">
            
             <input type="text" id="txtSearch" class="form-control" placeholder="Tìm kiếm sản phẩm" >
@@ -266,6 +271,7 @@
 <script src="./model/product.js"></script>
 <script src="./model/listproduct.js"></script>
 <script src="./services/api.js"></script>
+<script src="./model/validation.js"></script>
 <script src="./controller/main.js"></script>
 </body>
 </html>

@@ -3,15 +3,15 @@ this.arr = [];
 this.addProduct = function(listProduct){
     this.arr = listProduct
 }
-this.tucaodenthap = function (a, b) {
+this.highToLow = function (a, b) {
     return b.price - a.price;
 };
-this.tuthapdencao = function (a, b) {
+this.lowToHigh = function (a, b) {
     return a.price - b.price;
 };
 }
 ListProduct.prototype.findProduct = function(keyword){
-    console.log(keyword);
+   
 var arraySearch = [];
 for(var i = 0; i < this.arr.length; i++){
     var product = this.arr[i];
@@ -31,9 +31,9 @@ var nameLowerCase = product.name.toLowerCase();
 ListProduct.prototype.orderByPrice = function(value){
  if (value === "DESC") {
     // DESC tu cao xuong thap
-  return  this.arr.sort(this.tucaodenthap)
+  return  this.arr.sort(this.highToLow)
 
  } else {
-   return this.arr.sort(this.tuthapdencao)
+   return this.arr.sort(this.lowToHigh)
  }
  }
