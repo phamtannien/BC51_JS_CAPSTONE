@@ -1,4 +1,5 @@
 .content {
+    background-color: $color-white-2;
     .product-title {
         display: block;
         text-align: center;
@@ -12,6 +13,7 @@
 }
 
 .card {
+    margin: 5px;
     border-radius: 10px;
     background-color: $color-white-4;
     @include style-text($fs-2, $color-dark-2);
@@ -21,14 +23,17 @@
     }
 
     .card-body {
-        height: 350px;
+        height: 250px;
+    }
+    .card-text p{
+        margin-bottom: 0 !important;
     }
 
 }
 
 .buyItem {
     position: relative;
-    top: auto;
+    bottom: 10px;
     color: $color-dark-4;
     padding: 5px 10px;
     background-color: $color-blue-4;

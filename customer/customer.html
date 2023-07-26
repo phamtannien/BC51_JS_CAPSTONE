@@ -71,10 +71,13 @@
                     <input class="form-control mr-sm-2" id="searchProduct" type="text" placeholder="Search Phone">
                     <button class="btn btn-success" type="submit">Search</button>
                 </form>
-                <button id="btnGioHang" data-toggle="modal" data-target="#myModal" class="btn btn-info">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <p class="shopcart">Cartmaket</p>
-                </button>
+                <div>
+                    <button id="btnGioHang" data-toggle="modal" data-target="#myModal" class="btn btn-info">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p class="shopcart">Cartmaket</p>
+                    </button>
+                </div>
+
 
             </nav>
         </div>
@@ -82,13 +85,15 @@
 
 
     </section>
+
     <section class="container">
         <div class="content">
-            <div style="display: none;" id="loader" class="loader"></div>
             <div class="product-title">
                 <h1>Product</h1>
             </div>
+            <div style="display: none;" id="loader" class="loader"></div>
             <div class="row" id="hienThiSanPham">
+              
 
             </div>
         </div>
