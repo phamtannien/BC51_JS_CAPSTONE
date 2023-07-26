@@ -8,7 +8,7 @@ function Service() {
     }
      this.delProductApi = function(id){
         var promise = axios({
-            url:` https://64b78d6021b9aa6eb07853c6.mockapi.io/Products${id}` ,
+            url:` https://64b78d6021b9aa6eb07853c6.mockapi.io/Products/${id}` ,
             method: "DELETE",
         });
         return promise
