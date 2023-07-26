@@ -34,7 +34,7 @@ function renderSanPham(data) {
 
 
         content += `
-        <div class="item col-12 col-md-6 col-lg-4">
+        <div class="item col-12 col-md-6 col-lg-3">
                     <div class="card-group">
                         <div class="card">
                             <h4 class="card-head">${product.name}</h4>
@@ -42,15 +42,15 @@ function renderSanPham(data) {
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <p class="card-text">Loại: ${product.type} </p>
-                                    <p class="card-text">Giá: ${product.price}</p>
+                                    <p class="card-text">Giá:${product.price}$</p>
                                 </div>
-                                <p class="card-text">screen: ${product.screen}</p>
-                                <p class="card-text">backCamera: ${product.backCamera}</p>
-                                <p class="card-text">frontCamera: ${product.frontCamera}</p>
-                                <p class="card-text">Desc:  ${product.desc}</p>
-                                <div class="d-flex justify-content-center">
+                                <span class="card-text">screen: ${product.screen}</span>
+                                <span class="card-text">backCamera: ${product.backCamera}</span>
+                                <span class="card-text">frontCamera: ${product.frontCamera}</span>
+                                <span class="card-text">Desc:  ${product.desc}</span>
+                            </div>
+                            <div class="d-flex justify-content-center">
                                     <button onclick="themSanPham(${product.id})" class="buyItem">Chọn</button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -117,8 +117,6 @@ function thongTinGioHang(id, isVali) {
     var price = product.price;
     var img = product.img;
     var soLuong = 1;
-    var money = 0;
-
     if (isVali) {
         var flag = false;
         for (var i = 0; i < cart.arr.length; i++) {
@@ -136,7 +134,7 @@ function thongTinGioHang(id, isVali) {
                 price: price,
                 img: img,
                 soLuong: soLuong,
-                money: soLuong * price,
+                
             }
             cart.themSP(cartItem);
         }
@@ -180,7 +178,7 @@ function renderCart() {
             <img class="gioHang-img" src="${cartItem.img}" alt="">
         </td>
         <td>${cartItem.name}</td>
-        <td>${cartItem.price}</td>
+        <td>${cartItem.price} $</td>
         <td>
             <button onclick="giam(${cartItem.id})">-</button>
             <span>${cartItem.soLuong}</span>
@@ -190,7 +188,7 @@ function renderCart() {
         <td>
             <button onclick="xoaSanPham(${cartItem.id})">Xóa</button>
         </td>
-        <td>${cartItem.money}$</td>
+        <td>${money(cartItem.soLuong, cartItem.price)}$</td>
     </tr>
                          
     `
@@ -210,7 +208,7 @@ function giam(id) {
         cart.xoaSanPham(id);
     }
     cartItem.soLuong = soLuong;
-    cartItem.money = money(cartItem.soLuong, cartItem.price);
+    
     renderCart(cart.arr);
     setLocalStorage();
 }
@@ -223,7 +221,7 @@ function tang(id) {
     }
     var soLuong = cartItem.soLuong + 1;
     cartItem.soLuong = soLuong;
-    cartItem.money = money(cartItem.soLuong, cartItem.price);
+   
     renderCart(cart.arr);
     setLocalStorage();
 }
@@ -240,7 +238,7 @@ function thanhToan() {
 
     }
     getEle("hienthi").style.display = "none";
-    getEle("btnGioHang").style.color = "black";
+    getEle("btnGioHang").style.color = "white";
     getEle("gioHang").style.display = "none";
     getEle("hienThiThanhToan").style.display = "block";
     var input = "Số tiền quý khách cần thanh toán là: " + total + "$";
