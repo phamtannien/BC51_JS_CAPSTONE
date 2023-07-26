@@ -18,9 +18,27 @@ function getInfoProduct(id){
    /**
    * validation
    */
-  //name
+  
   var flag = true;
+  //name
   flag &= validation.checkHollow(name, "tbname", "(*)Vui lòng nhập tên sản phẩm")
+  //price
+  flag &= validation.checkHollow(price, "tbprice", "(*)Vui lòng nhập giá sản phẩm")
+  && validation.checkNumber(price, "tbprice", "(*)Vui lòng nhập kí tự số")
+  //screen
+  flag &= validation.checkHollow(screen, "tbscreen", "(*)Vui lòng nhập thông số màn hình")
+  //backcam
+  flag &= validation.checkHollow(backCam, "tbbackCam", "(*)Vui lòng nhập thông số cam sau")
+  //frontcam
+  flag &= validation.checkHollow(frontCam, "tbfrontCam", "(*)Vui lòng nhập thông số cam trước")
+  //img
+  flag &= validation.checkHollow(img, "tbimg", "(*)Vui lòng nhập hình ảnh")
+  //des
+  flag &= validation.checkHollow(desc, "tbdesc", "(*)Vui lòng nhập mô tả")
+  //type
+  flag &= validation.checkType("type", "tbtype", "(*)Vui lòng chọn loại")
+
+  
   
   if (flag) {
     //tạo đối tượng product từ lớp đối tượng Product
@@ -67,8 +85,8 @@ function renderUI(data) {
                 <td>${product.desc}</td>
                 
                 <td>
-                    <button class="btn btn-info"  data-toggle="modal" data-target="#exampleModal" onclick="editProduct(${product.id})">Sửa</button>
-                    <button class="btn btn-danger" onclick="delProduct(${product.id})" >Xóa</button>
+                    <button style="background-color: #007bff;" class="btn btn-info"  data-toggle="modal" data-target="#exampleModal" onclick="editProduct(${product.id})">Sửa</button>
+                    <button style="background-color: #dc3545;"  class="btn btn-danger" onclick="delProduct(${product.id})" >Xóa</button>
                 </td>
             </tr>
         `
@@ -93,6 +111,7 @@ getEle("txtSearch").addEventListener("keyup", searchProduct)
  */
 function delProduct(id) {
   var promise = api.delProductApi(id);
+  
   promise
     .then(function (result) {
       alert('bạn muốn xóa sản phẩm')
@@ -107,7 +126,7 @@ function delProduct(id) {
  */
 getEle("btnThemSP").onclick = function () {
   getEle("header-title").innerHTML = "Thêm sản phẩm"
-  var buttonAdd = `<button  class="btn" onclick="addPhone()"> Add Phone</button>`
+  var buttonAdd = `<button style="background-color:#ffc107 ;" onclick="addPhone()"> Add Phone</button>`
   getEle("modal-footer").innerHTML = buttonAdd;
 }
 
