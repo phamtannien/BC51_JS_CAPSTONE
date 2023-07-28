@@ -75,7 +75,7 @@ function selectTypeProduct() {
         if (selectLowerCase == typeLowerCase) {
             selectType.push(product);
 
-        } if (select == "") {
+        } if (selectLowerCase == "") {
             selectType = dssp;
         }
     }
@@ -134,7 +134,7 @@ function thongTinGioHang(id, isVali) {
                 price: price,
                 img: img,
                 soLuong: soLuong,
-                
+
             }
             cart.themSP(cartItem);
         }
@@ -147,10 +147,9 @@ function themSanPham(id) {
     getEle("hienthi").style.display = "block";
     var cartItem = thongTinGioHang(id, true);
     if (cartItem) {
-        // console.log(cartItem);
+        alert('mua hàng thành công !!!');
         renderCart(cartItem);
         setLocalStorage();
-
     }
 
 }
@@ -208,7 +207,7 @@ function giam(id) {
         cart.xoaSanPham(id);
     }
     cartItem.soLuong = soLuong;
-    
+
     renderCart(cart.arr);
     setLocalStorage();
 }
@@ -221,7 +220,7 @@ function tang(id) {
     }
     var soLuong = cartItem.soLuong + 1;
     cartItem.soLuong = soLuong;
-   
+
     renderCart(cart.arr);
     setLocalStorage();
 }
